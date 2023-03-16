@@ -1,20 +1,24 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+  <ion-toolbar color="primary">
+    <ion-title> Ionic HealthKit </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-button expand="block" (click)="getPermissions()">
+    Get Permissions
+  </ion-button>
+  <ion-button expand="block" (click)="loadEnergyBurned()">
+    Get Energy Burned
+  </ion-button>
+  <ion-button expand="block" (click)="loadWeight()"> Get Weight </ion-button>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-item>
+    <ion-label stacked>Current Weight</ion-label>
+    <ion-input type="text" [(ngModel)]="weight" readonly></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label stacked>Energy Burned</ion-label>
+    <ion-input type="text" [(ngModel)]="calories" readonly></ion-input>
+  </ion-item>
 </ion-content>
